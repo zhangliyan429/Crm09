@@ -1,0 +1,20 @@
+<!DOCTYPE configuration    
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
+   "D://mybatis-3-config.dtd">
+    <!-- 由于经常出现time out conn 所以改为本地 -->
+
+<configuration>
+<settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+	<typeAliases>
+		<package name="com.shsxt.crm.model"/>
+	</typeAliases>
+	<plugins>
+		<!-- 分页插件配置 -->
+		<plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
+           <property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect"/>
+    	</plugin>
+	</plugins>
+	
+</configuration>
